@@ -1,0 +1,4 @@
+# Python
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+export WORKON_HOME="$HOME/.virtualenvs"
+source /usr/local/bin/virtualenvwrapper.sh

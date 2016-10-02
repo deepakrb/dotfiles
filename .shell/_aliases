@@ -1,0 +1,31 @@
+alias please=sudo														# First and foremost
+alias cp='cp -iv'                           							# Preferred 'cp' implementation
+alias mv='mv -iv'                           							# Preferred 'mv' implementation
+alias mkdir='mkdir -pv'                     							# Preferred 'mkdir' implementation
+alias ll='ls -lhA'                            							# Preferred 'ls' implementation
+alias less='less -FSRXc'                    							# Preferred 'less' implementation
+alias cd..='cd ../'                         							# Go back 1 directory level
+alias .2='cd ../../'                        							# Go back 2 directory levels
+alias .3='cd ../../../'                     							# Go back 3 directory levels
+alias .4='cd ../../../../'                  							# Go back 4 directory levels
+alias .5='cd ../../../../../'               							# Go back 5 directory levels
+alias .6='cd ../../../../../../'            							# Go back 6 directory levels
+alias ...='cd ../../'                       							# Go back 2 directory levels
+alias ....="cd ../../../"   											# Go back 3 directory levels
+alias .....="cd ../../../../"											# Go back 4 directory levels
+alias ......="cd ../../../../../"										# Go back 5 directory levels
+alias edit='sublime'                       								# edit: Opens any file in sublime editor
+alias f='open -a Finder ./'                 							# f: Opens current directory in MacOS Finder
+alias ~="cd ~"                              							# ~: Go Home
+alias undopush="git push -f origin HEAD^:master"						# Undoes a git push
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"			# Deletes git store
+alias fs="stat -f \"%z bytes\""											# Gets filesize
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"	# Empties trash
+alias git-tree='git log --graph --full-history --all --color \
+        --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'		# Git Tree
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# IP Addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en1"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
