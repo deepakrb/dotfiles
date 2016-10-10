@@ -1,6 +1,6 @@
 syntax on               " syntax highlighting
 filetype indent on      " activates indenting for files
-colorscheme hybrid
+colorscheme monokai
 let $LANG='en' 
 
 set autoindent          " auto indenting
@@ -18,6 +18,7 @@ set langmenu=en         " Always show current position
 set hlsearch            " Highlight search terms
 set ruler               " Height of the command bar
 set cmdheight=2
+set pastetoggle=<F2>    " Toggles paste mode
 
 " move vertically by visual line
 nnoremap j gj
@@ -33,4 +34,9 @@ set tags+=~/.vim/tags/sdl2
 
 " build tags of your own project with Ctrl-F12
 map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+" Vim plugins
+call plug#begin('~/.vim/plugged')
+    Plug 'junegunn/vim-easy-align'
+call plug#end()
 
