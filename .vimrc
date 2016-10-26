@@ -1,8 +1,10 @@
 syntax on               " syntax highlighting
 filetype indent on      " activates indenting for files
-colorscheme monokai
+set t_Co=256 
+colorscheme hybrid
 let $LANG='en' 
 
+set clipboard=unnamed   " all yy and D go to world clipboard
 set autoindent          " auto indenting
 set background=dark
 set backspace=2         " backspace in insert mode works like normal editor
@@ -37,6 +39,15 @@ map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " Vim plugins
 call plug#begin('~/.vim/plugged')
-    Plug 'junegunn/vim-easy-align'
+    Plug 'tpope/vim-surround'
+    Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
+
+" CTRLP
+" Shortcuts
+" Press <c-f> and <c-b> to cycle between modes.
+" Press <c-r> to switch to regexp mode.
+" Press <c-d> to switch to filename only search instead of full path.
+let g:ctrlp_map = '<c-p>'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 

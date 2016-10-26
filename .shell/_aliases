@@ -23,9 +23,14 @@ alias fs="stat -f \"%z bytes\""											# Gets filesize
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"	# Empties trash
 alias git-tree='git log --graph --full-history --all --color \
         --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'		# Git Tree
+
+" Git --bare dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # IP Addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+
+#Docker
+#alias docker-rm-dangling="docker rmi $(docker images -f "dangling=true" -q)" # Remove Dangling Aliases
