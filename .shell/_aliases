@@ -17,14 +17,18 @@ alias ......="cd ../../../../../"										# Go back 5 directory levels
 alias edit='sublime'                       								# edit: Opens any file in sublime editor
 alias f='open -a Finder ./'                 							# f: Opens current directory in MacOS Finder
 alias ~="cd ~"                              							# ~: Go Home
-alias undopush="git push -f origin HEAD^:master"						# Undoes a git push
-alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"			# Deletes git store
 alias fs="stat -f \"%z bytes\""											# Gets filesize
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"	# Empties trash
-alias git-tree='git log --graph --full-history --all --color \
-        --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'		# Git Tree
 
-" Git --bare dotfiles
+# Git
+alias undopush='git push -f origin HEAD^:master'
+alias git-tree='git log --graph --full-history --all --color \
+        --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
+
+# Brew
+alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
+
+# Git --bare dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # IP Addresses

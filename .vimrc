@@ -1,12 +1,10 @@
 syntax on               " syntax highlighting
 filetype indent on      " activates indenting for files
 set t_Co=256 
-colorscheme hybrid
 let $LANG='en' 
 
-set clipboard=unnamed   " all yy and D go to world clipboard
+set clipboard=unnamed   " Copies (yy and dd etc) go to main clipboard
 set autoindent          " auto indenting
-set background=dark
 set backspace=2         " backspace in insert mode works like normal editor
 set showmatch           " highlight matching for brackets
 set wildmenu            " visual autocomplete for command menu
@@ -21,6 +19,11 @@ set hlsearch            " Highlight search terms
 set ruler               " Height of the command bar
 set cmdheight=2
 set pastetoggle=<F2>    " Toggles paste mode
+
+" Theme
+let g:hybrid_custom_term_colors = 1
+set background=dark
+colorscheme hybrid
 
 " move vertically by visual line
 nnoremap j gj
@@ -40,6 +43,7 @@ map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 " Vim plugins
 call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-surround'
+    Plug 'christoomey/vim-tmux-navigator'
     Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
