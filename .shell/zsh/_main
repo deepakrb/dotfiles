@@ -1,3 +1,5 @@
+# -----------------------------------------------
+# History
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 setopt NOTIFY
@@ -7,6 +9,9 @@ setopt MAILWARN
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=5000
 SAVEHIST=5000
+
+# -----------------------------------------------
+# Shortcuts
 
 # Enable reverse search
 bindkey -v
@@ -26,3 +31,9 @@ then
     bindkey "^[[F" end-of-line
 else
 fi
+
+# -----------------------------------------------
+# Prompt
+setopt PROMPT_SUBST
+NEWLINE=$'\n'
+PROMPT='%n%f@%m%f%%$(pwd)${NEWLINE}$ '
