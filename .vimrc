@@ -20,10 +20,14 @@ set ruler               " Height of the command bar
 set cmdheight=2
 set pastetoggle=<F2>    " Toggles paste mode
 
+"-------------------------------------------------------------------------------
 " Theme
 let g:hybrid_custom_term_colors = 1
 set background=dark
-colorscheme hybrid
+try
+    colorscheme hybrid
+catch
+endtry
 
 " move vertically by visual line
 nnoremap j gj
@@ -40,6 +44,7 @@ set tags+=~/.vim/tags/sdl2
 " build tags of your own project with Ctrl-F12
 map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
+"-------------------------------------------------------------------------------
 " Vim plugins
 call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-surround'
@@ -54,4 +59,8 @@ call plug#end()
 " Press <c-d> to switch to filename only search instead of full path.
 let g:ctrlp_map = '<c-p>'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+" Navigate buffers.
+:nnoremap <F7> :bprevious<CR>
+:nnoremap <F8> :bnext<CR>
 

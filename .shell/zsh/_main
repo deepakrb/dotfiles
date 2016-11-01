@@ -8,6 +8,21 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=5000
 SAVEHIST=5000
 
+# Enable reverse search
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
+if [[ `uname` == 'Darwin' ]]
+then
+    bindkey -e
+    # Option-Right
+    bindkey '\e\e[C' forward-word
+    # Option-Left
+    bindkey '\e\e[D' backward-word
+
+    # Cmd-Left
+    bindkey "^[[H" beginning-of-line
+    # Cmd-Right
+    bindkey "^[[F" end-of-line
+else
+fi
