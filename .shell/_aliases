@@ -30,6 +30,7 @@ alias git-tree='git log --graph --full-history --all --color \
 #-------------------------------------------------------------------------------
 # Editing
 alias edit='sublime'                       								# edit: Opens any file in sublime editor
+alias vscode='open $@ -a "Visual Studio Code"'
 
 #-------------------------------------------------------------------------------
 # Brew
@@ -46,14 +47,10 @@ alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
 #-------------------------------------------------------------------------------
-#Docker
-#alias docker-rm-dangling="docker rmi $(docker images -f 'dangling=true' -q)" # Remove Dangling Aliases
-
-
-#-------------------------------------------------------------------------------
 # Tmux
 alias tma='tmux attach -t'
 alias tml='tmux list-sessions'
+alias tmla='tml'
 alias tmks='tmux kill-server'
 alias tmka='tmks'
 alias tmk='tmux kill-session -t'

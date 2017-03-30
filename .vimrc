@@ -11,14 +11,21 @@ set wildmenu            " visual autocomplete for command menu
 set number              " line numbers
 set nobackup            " get rid of anoying ~file
 set cursorline
-set tabstop=4           " when indenting with '>', use 4 spaces width
-set shiftwidth=4        " On pressing tab, insert 4 spaces
+set tabstop=4           " On pressing tab, insert 4 spaces
+set shiftwidth=4        " when indenting with '>', use 4 spaces width
 set expandtab
 set langmenu=en         " Always show current position
-set hlsearch            " Highlight search terms
 set ruler               " Height of the command bar
 set cmdheight=2
 set pastetoggle=<F2>    " Toggles paste mode
+
+" Search Highlighting
+set hlsearch
+nnoremap <F3> :set hlsearch!<CR>
+
+" Navigate buffers.
+:nnoremap <F7> :bprevious<CR>
+:nnoremap <F8> :bnext<CR>
 
 "-------------------------------------------------------------------------------
 " Theme
@@ -60,7 +67,4 @@ call plug#end()
 let g:ctrlp_map = '<c-p>'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
-" Navigate buffers.
-:nnoremap <F7> :bprevious<CR>
-:nnoremap <F8> :bnext<CR>
 
