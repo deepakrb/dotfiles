@@ -1,7 +1,11 @@
+# --------------------------------------------
 # Ask for the administrator password upfront
+# --------------------------------------------
 sudo -v
 
-# Install files
+# --------------------------------------------
+# Dotfiles
+# --------------------------------------------
 git clone --bare git@github.com:deepakrb/dotfiles.git $HOME/.cfg
 function config {
     /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
@@ -17,7 +21,9 @@ fi;
 config checkout
 config config status.showUntrackedFiles no
 
+# --------------------------------------------
 # Homebrew
+# --------------------------------------------
 if test ! $(which brew)
 then
     echo "Installing Homebrew..."
@@ -40,7 +46,9 @@ apps=(
 
 brew install "${apps[@]}"
 
-# Homebrew - Node (for Mac)
+# --------------------------------------------
+# Node (for Mac)
+# --------------------------------------------
 rm -rf /usr/local/lib/node_modules
 brew uninstall node
 brew install node --without-npm
