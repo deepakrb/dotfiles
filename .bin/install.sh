@@ -30,12 +30,11 @@ brew upgrade --all
 apps=(
     rvm
     ffmpeg
-    fortune
     git
-    git-extras
     grep --with-default-names
     imagemagick --with-webp
     python
+    tmux
     reattach-to-user-namespace
 )
 
