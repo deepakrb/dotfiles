@@ -6,7 +6,7 @@ sudo -v
 # --------------------------------------------
 # Dotfiles
 # --------------------------------------------
-git clone --bare git@github.com:deepakrb/dotfiles.git $HOME/.cfg
+git clone --bare https://github.com/deepakrb/dotfiles.git $HOME/.cfg
 function config {
     /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
