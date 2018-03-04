@@ -3,7 +3,7 @@ filetype indent on      " activates indenting for files
 set t_Co=256 
 let $LANG='en' 
 
-set clipboard=unnamed   " Copies (yy and dd etc) go to main clipboard
+" set clipboard=unnamed   " Copies (yy and dd etc) go to main clipboard
 set autoindent          " auto indenting
 set backspace=2         " backspace in insert mode works like normal editor
 set showmatch           " highlight matching for brackets
@@ -53,7 +53,14 @@ map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 "-------------------------------------------------------------------------------
 " Vim plugins
-call plug#begin('~/.vim/plugged')
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/bundle')
     Plug 'tpope/vim-surround'
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'ctrlpvim/ctrlp.vim'
@@ -66,5 +73,4 @@ call plug#end()
 " Press <c-d> to switch to filename only search instead of full path.
 let g:ctrlp_map = '<c-p>'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-
 
