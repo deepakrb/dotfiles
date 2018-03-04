@@ -2,6 +2,9 @@ syntax on               " syntax highlighting
 filetype indent on      " activates indenting for files
 set t_Co=256 
 let $LANG='en' 
+let mapleader = ","
+let g:mapleader = ","
+
 
 " set clipboard=unnamed   " Copies (yy and dd etc) go to main clipboard
 set autoindent          " auto indenting
@@ -23,9 +26,27 @@ set pastetoggle=<F2>    " Toggles paste mode
 set hlsearch
 nnoremap <F3> :set hlsearch!<CR>
 
-" Navigate buffers.
-:nnoremap <F7> :bprevious<CR>
-:nnoremap <F8> :bnext<CR>
+" Close the current buffer
+map <leader>bd :Bclose<cr>:tabclose<cr>gT
+
+" Close all the buffers
+map <leader>ba :bufdo bd<cr>
+
+map <leader>l :bnext<cr>
+map <leader>h :bprevious<cr>
+
+" Useful mappings for managing tabs
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove 
+map <leader>t<leader> :tabnext 
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
 
 "-------------------------------------------------------------------------------
 " Theme
