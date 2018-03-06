@@ -2,8 +2,11 @@ syntax on               " syntax highlighting
 filetype indent on      " activates indenting for files
 set t_Co=256 
 let $LANG='en' 
+let mapleader = ","
+let g:mapleader = ","
 
-set clipboard=unnamed   " Copies (yy and dd etc) go to main clipboard
+
+" set clipboard=unnamed   " Copies (yy and dd etc) go to main clipboard
 set autoindent          " auto indenting
 set backspace=2         " backspace in insert mode works like normal editor
 set showmatch           " highlight matching for brackets
@@ -23,9 +26,27 @@ set pastetoggle=<F2>    " Toggles paste mode
 set hlsearch
 nnoremap <F3> :set hlsearch!<CR>
 
-" Navigate buffers.
-:nnoremap <F7> :bprevious<CR>
-:nnoremap <F8> :bnext<CR>
+" Close the current buffer
+map <leader>bd :Bclose<cr>:tabclose<cr>gT
+
+" Close all the buffers
+map <leader>ba :bufdo bd<cr>
+
+map <leader>l :bnext<cr>
+map <leader>h :bprevious<cr>
+
+" Useful mappings for managing tabs
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove 
+map <leader>t<leader> :tabnext 
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
 
 "-------------------------------------------------------------------------------
 " Theme
@@ -53,7 +74,14 @@ map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 "-------------------------------------------------------------------------------
 " Vim plugins
-call plug#begin('~/.vim/plugged')
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/bundle')
     Plug 'tpope/vim-surround'
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'ctrlpvim/ctrlp.vim'
@@ -66,5 +94,3 @@ call plug#end()
 " Press <c-d> to switch to filename only search instead of full path.
 let g:ctrlp_map = '<c-p>'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-
-
