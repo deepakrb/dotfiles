@@ -48,6 +48,12 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Pane switching
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 "-------------------------------------------------------------------------------
 " Theme
 let g:hybrid_custom_term_colors = 1
