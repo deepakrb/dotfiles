@@ -52,6 +52,12 @@ set tm=500
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 
+" Pane switching
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 "-------------------------------------------------------------------------------
 " Theme
 let g:hybrid_custom_term_colors = 1
