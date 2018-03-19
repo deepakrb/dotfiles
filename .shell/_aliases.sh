@@ -29,9 +29,9 @@ alias git-tree='git log --graph --full-history --all --color \
 
 #-------------------------------------------------------------------------------
 # Editing
-alias edit='sublime'                       								# edit: Opens any file in sublime editor
+alias edit='sublime'
 alias vscode='open $@ -a "Visual Studio Code"'
-alias vim="/usr/local/bin/vim"
+# alias vim="/usr/local/bin/vim"
 
 #-------------------------------------------------------------------------------
 # Brew

@@ -48,6 +48,10 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Fix netrw (file viewer)
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+
 "-------------------------------------------------------------------------------
 " Theme
 let g:hybrid_custom_term_colors = 1
