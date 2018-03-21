@@ -32,6 +32,7 @@ alias git-tree='git log --graph --full-history --all --color \
 alias edit='sublime'
 alias vscode='open $@ -a "Visual Studio Code"'
 # alias vim="/usr/local/bin/vim"
+alias idea='open -a "`ls -dt /Applications/IntelliJ\ IDEA*|head -1`"'
 
 #-------------------------------------------------------------------------------
 # Brew
