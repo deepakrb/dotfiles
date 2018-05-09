@@ -1,5 +1,5 @@
-# Go
+# Golang
+
 export GOPATH=$HOME/.go
 export GOROOT=/usr/local/opt/go/libexec
-PATH=$PATH:$GOPATH/bin:$GOROOT/bin
-export PATH
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin

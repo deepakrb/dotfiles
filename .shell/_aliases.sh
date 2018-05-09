@@ -57,9 +57,10 @@ alias tmks='tmux kill-server'
 alias tmka='tmks'
 alias tmk='tmux kill-session -t'
 
+alias tomcat-bin='/usr/local/Cellar/tomcat/8.5.20/bin/catalina'
+alias tomcat-directory='/usr/local/Cellar/tomcat/8.5.20/libexec'
+
 #-------------------------------------------------------------------------------
 # Grabyo
 alias aws-eb='~/projects/ruby-scripts/grabyo/aws-eb-env.rb'
-alias tomcat-bin='/usr/local/Cellar/tomcat/8.5.20/bin/catalina'
-alias tomcat-directory='/usr/local/Cellar/tomcat/8.5.20/libexec'
 alias mfa='bash ~/.aws/mfa.sh'
