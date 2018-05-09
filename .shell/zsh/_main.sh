@@ -44,5 +44,3 @@ vcs_info_wrapper() {
 setopt PROMPT_SUBST
 NEWLINE=$'\n'
 PROMPT='%n%f@%m%f%%$(pwd)$(vcs_info_wrapper):${NEWLINE}$ '
-
-fortune
