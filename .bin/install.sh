@@ -42,6 +42,7 @@ apps=(
     python
     tmux
     reattach-to-user-namespace
+    fortune
 )
 
 brew install "${apps[@]}"
