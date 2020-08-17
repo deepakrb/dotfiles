@@ -47,6 +47,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias allmac="ifconfig | grep broadcast | arp -a"
 
 #-------------------------------------------------------------------------------
 # Tmux
@@ -56,8 +57,3 @@ alias tmla='tml'
 alias tmks='tmux kill-server'
 alias tmka='tmks'
 alias tmk='tmux kill-session -t'
-
-#-------------------------------------------------------------------------------
-# Tomcat
-alias tomcat-bin='/usr/local/Cellar/tomcat/8.5.20/bin/catalina'
-alias tomcat-directory='/usr/local/Cellar/tomcat/8.5.20/libexec'
